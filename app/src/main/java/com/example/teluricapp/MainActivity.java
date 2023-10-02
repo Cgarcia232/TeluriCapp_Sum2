@@ -28,8 +28,12 @@ public class MainActivity extends AppCompatActivity {
         contextoMain = this;
         new HttpGetRequest().execute();
     }
-    public void Actualziar(View view) {
+    public void Actualizar(View view) {
         new HttpGetRequest().execute();
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of eab5747 (Cambio de prueba)
     }
+
 }
