@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         contextoMain = this;
         new HttpGetRequest().execute();
     }
-    public void Actualizar(View view) {
+    public void Actualziar(View view) {
         new HttpGetRequest().execute();
+        //Esto es un cambio
     }
-
 }
