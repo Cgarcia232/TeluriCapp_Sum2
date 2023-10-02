@@ -31,5 +31,5 @@ public class MainActivity extends AppCompatActivity {
     public void Actualizar(View view) {
         new HttpGetRequest().execute();
     }
-//yapu marcos
+
 }
