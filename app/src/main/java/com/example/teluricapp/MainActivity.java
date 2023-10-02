@@ -31,5 +31,5 @@ public class MainActivity extends AppCompatActivity {
     public void Actualziar(View view) {
         new HttpGetRequest().execute();
 
-    } //hola
+    }
 }
