@@ -4,31 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#7BA4C5"
+    android:backgroundTint="#FAF8F8"
+    android:scrollbarSize="10dp"
     tools:context=".MainActivity">
 
 
     <ListView
         android:id="@+id/listSismos"
-        android:layout_width="408dp"
-        android:layout_height="669dp"
+        android:layout_width="345dp"
+        android:layout_height="536dp"
+        android:backgroundTint="#45B6C5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.358" />
 
     <Button
         android:id="@+id/boton_recargar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Actualizar"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="149dp"
+        android:layout_height="57dp"
+        android:backgroundTint="#4DCDC1"
+        android:drawableTop="@color/design_default_color_primary_dark"
         android:onClick="Actualizar"
+        android:scrollbarTrackVertical="@drawable/ic_launcher_background"
+        android:text="Actualizar"
+        android:textColor="#FAF4F4"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.912"
+        app:layout_constraintHorizontal_bias="0.938"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listSismos" />
+        app:layout_constraintTop_toBottomOf="@+id/listSismos"
+        app:layout_constraintVertical_bias="0.617" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="420dp"
+        android:layout_height="54dp"
+        android:background="#76DCD2"
+        android:backgroundTint="#69C5BC"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="                      Sismología Chile"
+        android:textColor="#FDF6F6"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/listSismos"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="2dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
