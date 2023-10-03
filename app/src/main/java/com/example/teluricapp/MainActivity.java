@@ -1,5 +1,5 @@
 package com.example.teluricapp;
-
+import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     public static List<Sismo> Sismos;
     public static Context contextoMain;
     public static ListView ListaSismosView;
+    public Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,16 @@ public class MainActivity extends AppCompatActivity {
         this.ListaSismosView = (ListView) findViewById(R.id.listSismos);
         contextoMain = this;
         new HttpGetRequest().execute();
+        handler.postDelayed(actualizacionAutomatica, 1 * 60 * 1000);
     }
+
+    private Runnable actualizacionAutomatica = new Runnable() {
+        @Override
+        public void run() {
+            new HttpGetRequest().execute();
+            handler.postDelayed(this, 1 * 60 * 1000);
+        }
+    };
     public void Actualizar(View view) {
         new HttpGetRequest().execute();
     }
