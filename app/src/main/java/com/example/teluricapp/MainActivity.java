@@ -31,12 +31,10 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(actualizacionAutomatica, 1 * 60 * 1000);
 
 
-        // Configura el botón de actualización
         Button botonActualizar = findViewById(R.id.boton_recargar);
         botonActualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Cuando se hace clic en el botón, inicia la actualización
                 new HttpGetRequest().execute();
             }
         });
@@ -52,8 +50,5 @@ public class MainActivity extends AppCompatActivity {
             handler.postDelayed(this, 1 * 60 * 1000);
         }
     };
-    public void Actualizar(View view) {
-        new HttpGetRequest().execute();
-    }
 
 }
