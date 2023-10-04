@@ -48,10 +48,12 @@ public class Adaptador extends BaseAdapter {
         TextView magnitud = (TextView) view.findViewById(R.id.label_magnitud);
         TextView ref_geografica = (TextView) view.findViewById(R.id.label_ref_geografica);
         TextView f_actualizacion = (TextView) view.findViewById(R.id.label_update);
+        TextView hora_sismo = (TextView) view.findViewById(R.id.hora);
 
         magnitud.setText(""+ Sismos.get(position).getMagnitud());
         ref_geografica.setText("" +Sismos.get(position).getRefGeografica());
         f_actualizacion.setText(""+Sismos.get(position).getFechaUpdate());
+        hora_sismo.setText(""+Sismos.get(position).GetHora());
         return view;
     }
 }

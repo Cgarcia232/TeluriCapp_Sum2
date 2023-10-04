@@ -14,6 +14,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
 
 public class HttpGetRequest extends AsyncTask<Void, Void, String> {
     @Override
@@ -56,19 +60,36 @@ public class HttpGetRequest extends AsyncTask<Void, Void, String> {
         try {
             JSONArray jsonArray = new JSONArray(result);
             for (int i = 0; i < jsonArray.length(); i++) {
+
+                
                 JSONObject objetoSismo = jsonArray.getJSONObject(i);
+
+                String fechaUpdateString = objetoSismo.getString("FechaUpdate");
+
+                // Formato de fecha en formato ISO 8601
+                SimpleDateFormat iso8601Format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+                iso8601Format.setTimeZone(TimeZone.getTimeZone("UTC"));
+                Date fechaUpdateDate = iso8601Format.parse(fechaUpdateString);
+                SimpleDateFormat fechaFormat = new SimpleDateFormat("yyyy-MM-dd");
+                SimpleDateFormat horaFormat = new SimpleDateFormat("HH:mm:ss");
+
+                String fecha = fechaFormat.format(fechaUpdateDate);
+                String hora = horaFormat.format(fechaUpdateDate);
                 Sismo sismo = new Sismo(
                         objetoSismo.getString("Fecha"),
                         objetoSismo.getDouble("Profundidad"),
                         objetoSismo.getDouble("Magnitud"),
                         objetoSismo.getString("RefGeografica"),
-                        objetoSismo.getString("FechaUpdate")
+                        fecha,
+                        hora
                 );
                 resultado.add(sismo);
             }
             ListaSismosView.setAdapter(new Adaptador(contextoMain, resultado));
         } catch (JSONException e) {
             e.printStackTrace();
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
         }
     }
 }

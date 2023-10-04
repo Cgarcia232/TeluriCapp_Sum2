@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="125dp" />
+        app:layout_constraintGuide_begin="109dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline8"
@@ -49,19 +49,21 @@
 
     <TextView
         android:id="@+id/label_magnitud"
-        android:layout_width="69dp"
-        android:layout_height="40dp"
+        android:layout_width="59dp"
+        android:layout_height="30dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintHorizontal_bias="0.64"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.583" />
 
     <TextView
         android:id="@+id/label_update"
-        android:layout_width="89dp"
+        android:layout_width="78dp"
         android:layout_height="19dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="88dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
@@ -72,8 +74,9 @@
         android:id="@+id/texto_plano_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="Fecha y hora :"
+        android:layout_marginEnd="8dp"
+        android:text="Fecha :"
+        android:fontFamily="sans-serif-condensed-medium"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintEnd_toStartOf="@+id/label_update"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
@@ -81,14 +84,54 @@
 
     <TextView
         android:id="@+id/label_ref_geografica"
-        android:layout_width="234dp"
-        android:layout_height="30dp"
+        android:layout_width="178dp"
+        android:layout_height="39dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintHorizontal_bias="0.388"
+        app:layout_constraintHorizontal_bias="0.62"
         app:layout_constraintStart_toStartOf="@+id/guideline7"
         app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:layout_constraintVertical_bias="0.604" />
+        app:layout_constraintVertical_bias="0.692" />
+
+    <TextView
+        android:id="@+id/hora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline8"
+        app:layout_constraintTop_toBottomOf="@+id/label_magnitud"
+        app:layout_constraintVertical_bias="0.916" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="64dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="8dp"
+        android:text="Magnitud :"
+        android:fontFamily="sans-serif-condensed-medium"
+        app:layout_constraintBottom_toTopOf="@+id/label_magnitud"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline8"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:text="Ref. Geográfica"
+        android:fontFamily="sans-serif-condensed-medium"
+
+        app:layout_constraintBottom_toTopOf="@+id/label_ref_geografica"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.016"
+        app:layout_constraintStart_toStartOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
